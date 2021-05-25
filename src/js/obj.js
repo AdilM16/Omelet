@@ -14,9 +14,11 @@ class Perso {
             console.log(`${article.nom} a couté ${article.prix} `);
             
         }
-        this.couper=(ingredient, outil)=>{
-            ingredient.etats=outil.action
-            console.log(`${this.nom} a coupé ${this.nom}`);
+        
+        this.couper=(ingredient)=>{
+            ingredient.etats = "Coupé"
+            
+            console.log(`${this.nom} a coupé ${ingredient.nom}`);
         }
     }
 }
@@ -103,8 +105,10 @@ class Bol extends Outil {
     constructor(nom,tableau){
         super(nom)
         this.tableau = tableau,
-        this.meLanger=(nomMelanger)=>{
-            let newMelange = new ingredients(this.nom,"pas cuit!",2)
+        this.meLanger=(nomMelange)=>{
+            let newMelange = new Ingredients(nomMelange,"pas cuit!")
+            console.log(`Le ${this.nom} a été mélangé  pour obtenir une omelette ${newMelange.etats}`);
+            return newMelange
         }
     }
     

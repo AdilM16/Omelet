@@ -57,7 +57,6 @@
 >>1. rentrer à la maison (comme ça on pourra cuisiner)
 >>1. mettre chaque ingrédient dans le bol (1 à 1 donc avec une boucle)
 >>1. Vérifier que les ingrédients ne se trouvent plus dans le panier (oups ! on a oublié de le rapporter x)
-
 >>1. Afficher un petit message de chaque ingrédient qu'on met dans le bol.
 >>1. Retourner à l'épicerie pour rapporter le panier. (donc seDeplacer puis enlever le panier de la main droite et le remetre dans les paniers de l'épicerie.)
 >>1. Afficher un petit message
@@ -66,5 +65,6 @@
 >>1. Vérifier chaque ingrédient dans le bol et le couper seulement s'il est entier ! Pour ça on utilise la méthode couper de personnage
 >>1. Mélanger le contenu du bol avec la méthode melanger. on va nommer ce mélange une 'omelette' (à passer en param).
 >>1. Afficher un message avec le nouveau mélange
+
 >>1. vider le contenu du bol dans la poele. Il ne doit plus rien avoir dans le bol et y avoir juste l'omelette pas cuite.
 >>1. Afficher un message final, notre omelette est cuite :)

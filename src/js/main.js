@@ -14,7 +14,7 @@ let rayon = [oignon,oeuf,epice,fromage];
 let couteau = new Couteau("Couteau","Coupé");
 let bol = new Bol("Bol",[]);
 let poele = new Poele("Poele",[]);
-
+let Omelette = new Ingredients ("Omelette","cuite");
 
 perso.seDeplacer(maison);
 
@@ -30,8 +30,7 @@ rayon.forEach(produits => {
     console.log(perso.nom + " a prit " + produits.nom);
     perso.mainDroite[0].bac.push(produits)
 });
-console.log(perso.mainDroite);
-
+console.log(perso.mainDroite[0].bac);
 console.log('____');
 
 perso.mainDroite[0].bac.forEach(produits => {
@@ -42,19 +41,36 @@ console.log(`Il reste ${perso.argent} euro à ${perso.nom} `);
 
 perso.seDeplacer(maison);
 
-perso.mainDroite[0].bac.forEach(produits => {
-    bol.tableau.push(produits)
-    
-    perso.mainDroite[0].bac.pop(produits)
-    perso.mainDroite[0].bac.shift(produits)
+while (perso.mainDroite[0].bac.length > 0) {
+    console.log(`${perso.nom} a posé ${perso.mainDroite[0].bac[0].nom} dans le ${bol.nom}`);
+    bol.tableau.push(perso.mainDroite[0].bac.shift())
+}
+
+console.log(perso.mainDroite[0].bac);
+
+perso.seDeplacer(epicerie);
+epicerie.paniers.push(perso.mainDroite.shift());
+console.log(`${perso.nom} a posé le ${epicerie.paniers[1].type}`);
+
+perso.seDeplacer(maison);
+
+console.log(`${perso.nom} est de retour à la ${perso.lieu.nom} pour faire son omelette`);
+
+bol.tableau.forEach(ingredient => {
+    perso.couper(ingredient)
+    console.log(ingredient);
 });
 
-console.log(perso.mainDroite);
+let OmeletteFinal = bol.meLanger(Omelette)
 
 
+bol.tableau.forEach(element => {
+    bol.tableau.shift(element)
+    bol.tableau.shift(element)
+});
 
+bol.tableau.push(OmeletteFinal);
+console.log(` Il ne reste que l'omelette ${bol.tableau[0].etats}`);
 
-
-
-
+console.log(`${Omelette.nom} est ${Omelette.etats} !`);
 
