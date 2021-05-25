@@ -10,8 +10,9 @@ class Perso {
             console.log(`${this.nom} est actuellement à la ${lieu.nom}`);
         }
         this.payerArticle=(article)=>{
-            argent-=article.prix
+            this.argent-=article.prix
             console.log(`${article.nom} a couté ${article.prix} `);
+            
         }
         this.couper=(ingredient, outil)=>{
             ingredient.etats=outil.action
